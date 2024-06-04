@@ -17,4 +17,16 @@ const app = createApp(App)
 
 registerPlugins(app)
 
-app.mount('#app')
+const shadow = document.querySelector("#host").attachShadow({ mode: "open" });
+
+app.mount(shadow)
+
+const csslink = document.createElement('link');
+csslink.id = "vuejs";
+csslink.rel = 'stylesheet';
+csslink.href = 'dist/index.css';
+shadow.appendChild(csslink)
+const vOverlay = document.createElement("div");
+vOverlay.className = "v-overlay-container";
+shadow.appendChild(vOverlay);
+console.log(csslink)

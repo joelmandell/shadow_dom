@@ -10,6 +10,16 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: 'repro/dist',
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].js`, // works
+        chunkFileNames: `[name].js`, // works
+        assetFileNames: `[name].[ext]`,
+      },
+    },
+  },
   plugins: [
     Vue({
       template: { transformAssetUrls }
