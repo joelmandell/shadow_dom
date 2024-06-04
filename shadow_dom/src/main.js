@@ -29,4 +29,3 @@ shadow.appendChild(csslink)
 const vOverlay = document.createElement("div");
 vOverlay.className = "v-overlay-container";
 shadow.appendChild(vOverlay);
-console.log(csslink)
